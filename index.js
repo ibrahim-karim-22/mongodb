@@ -29,7 +29,7 @@ MongoClient.connect(url, { }).then(client => {
             { description: "Updated Test Description" }, 'campsites');
     })
     .then(result => {
-        console.log('Updated Document Count:', result);
+        console.log('Updated Document Count:', result.modifiedCount);
 
         return dboper.findDocuments(db, 'campsites');
     })
