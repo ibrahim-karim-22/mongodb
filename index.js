@@ -18,7 +18,7 @@ MongoClient.connect(url, { }).then(client => {
 
     dboper.insertDocument(db, {name: "Breadcrumb Trail Campground", description: "Test"}, 'campsites')
     .then(result => {
-        console.log('Insert Document:', result.ops);
+        console.log('Insert Document:', result);
 
         return dboper.findDocuments(db, 'campsites');
     })
@@ -29,7 +29,7 @@ MongoClient.connect(url, { }).then(client => {
             { description: "Updated Test Description" }, 'campsites');
     })
     .then(result => {
-        console.log('Updated Document Count:', result.result.nModified);
+        console.log('Updated Document Count:', result);
 
         return dboper.findDocuments(db, 'campsites');
     })
